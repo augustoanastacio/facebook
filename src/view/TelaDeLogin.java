@@ -5,10 +5,6 @@
  */
 package view;
 
-import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
-import model.dao.UsuarioDAO;
-
 /**
  *
  * @author augus
@@ -31,116 +27,88 @@ public class TelaDeLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textoLogin = new javax.swing.JTextField();
-        passwordSenha = new javax.swing.JPasswordField();
-        entrar = new javax.swing.JButton();
-        criarUser = new javax.swing.JButton();
-        esqueciSenha = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        mensagem = new javax.swing.JLabel();
+        campoLogin = new javax.swing.JTextField();
+        campoSenha = new javax.swing.JPasswordField();
+        botaoEntrar = new javax.swing.JButton();
+        botaoNovoUser = new javax.swing.JButton();
+        botaoEsqueSenha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        passwordSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordSenhaActionPerformed(evt);
-            }
-        });
-
-        entrar.setText("Entrar");
-        entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrarActionPerformed(evt);
-            }
-        });
-
-        criarUser.setText("Criar nova conta");
-        criarUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                criarUserActionPerformed(evt);
-            }
-        });
-
-        esqueciSenha.setText("Esqueci minha senha");
-        esqueciSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                esqueciSenhaActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Login:");
 
         jLabel2.setText("Senha:");
 
+        campoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoLoginActionPerformed(evt);
+            }
+        });
+
+        botaoEntrar.setText("Entrar");
+
+        botaoNovoUser.setText("Criar novo usuário");
+        botaoNovoUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoNovoUserActionPerformed(evt);
+            }
+        });
+
+        botaoEsqueSenha.setText("esqueci minha senha");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botaoEsqueSenha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botaoNovoUser))
                     .addComponent(jLabel2)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(passwordSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(entrar))
-                    .addComponent(textoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(criarUser)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(esqueciSenha)
-                        .addGap(18, 18, 18)
-                        .addComponent(mensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(campoSenha)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(botaoEntrar))
+                        .addComponent(campoLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(textoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(9, 9, 9)
+                .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel2)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(passwordSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(entrar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(esqueciSenha)
-                .addGap(1, 1, 1)
-                .addComponent(mensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(criarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoEntrar))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoEsqueSenha)
+                    .addComponent(botaoNovoUser))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void passwordSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordSenhaActionPerformed
-
-    }//GEN-LAST:event_passwordSenhaActionPerformed
-
-    private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-        UsuarioDAO dao = new UsuarioDAO();
-        if(dao.checkLogin(textoLogin.getText(), passwordSenha.getText())){
-            new MainPage().setVisible(true);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Usuário e senha não conferem!");
-        }
-    }//GEN-LAST:event_entrarActionPerformed
-
-    private void esqueciSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_esqueciSenhaActionPerformed
+    private void campoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_esqueciSenhaActionPerformed
+    }//GEN-LAST:event_campoLoginActionPerformed
 
-    private void criarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarUserActionPerformed
-        new CriaçãoDeUser().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_criarUserActionPerformed
+    private void botaoNovoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNovoUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botaoNovoUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,13 +146,12 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton criarUser;
-    private javax.swing.JButton entrar;
-    private javax.swing.JButton esqueciSenha;
+    private javax.swing.JButton botaoEntrar;
+    private javax.swing.JButton botaoEsqueSenha;
+    private javax.swing.JButton botaoNovoUser;
+    private javax.swing.JTextField campoLogin;
+    private javax.swing.JPasswordField campoSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel mensagem;
-    private javax.swing.JPasswordField passwordSenha;
-    private javax.swing.JTextField textoLogin;
     // End of variables declaration//GEN-END:variables
 }

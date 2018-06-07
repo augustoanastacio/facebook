@@ -1,3 +1,4 @@
+package model;
 import java.io.File;
 
 public class Photo extends File{

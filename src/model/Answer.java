@@ -1,3 +1,4 @@
+package model;
 
 public class Answer {
 	private String userName;

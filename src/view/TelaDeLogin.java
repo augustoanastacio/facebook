@@ -5,6 +5,8 @@
  */
 package view;
 
+import control.SocialNetwork;
+
 /**
  *
  * @author augus
@@ -48,6 +50,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
         });
 
         botaoEntrar.setText("Entrar");
+        botaoEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoEntrarActionPerformed(evt);
+            }
+        });
 
         botaoNovoUser.setText("Criar novo usuário");
         botaoNovoUser.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +116,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
     private void botaoNovoUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNovoUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoNovoUserActionPerformed
+
+    private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
+        SocialNetwork.login(campoLogin.getText(), campoSenha.getName(), SocialNetwork.users);
+        
+    }//GEN-LAST:event_botaoEntrarActionPerformed
 
     /**
      * @param args the command line arguments

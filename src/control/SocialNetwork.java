@@ -14,10 +14,12 @@ import model.User;
 import view.TelaDeLogin;
 
 public class SocialNetwork implements serializable {
-
+    
+      public static List<User> users;
+    
     public static void main(String[] args) throws ParseException {
         User user;
-        List<User> users;
+      
         String nametmp;
         String passwordtmp;
         String confirmPasswordtmp;

@@ -3,48 +3,53 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class User implements Serializable {
-	private String firstName;
-	private String lastName;
+	private String name;
 	private String email;
+        private String password;
 	private Date dob;
 	private Feed feed;
-	private ArrayList<User> friends;
-	private ArrayList<User> friendRequests;	
+	private List<User> friends;
+	private List<User> friendRequests;	
 	
-	public User(String firstName, String lastName, String email, Date dob) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+	public User(String name, String password, String email, Date dob) {
+		this.name = name;
 		this.email = email;
+                this.password = password;
 		this.dob = dob;
 		
 		this.feed = new Feed();
-		this.friends = new ArrayList<User>();
-		this.friendRequests = new ArrayList<User>();
+		this.friends = new ArrayList();
+		this.friendRequests = new ArrayList();
 	}
 	
 	// Getters and Setters
-	public String getFirstName() {
-		return firstName;
-	}
-	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	
-	public String getLastName() {
-		return lastName;
-	}
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
 	public String getName() {
-		return getFirstName() + ' ' + getLastName();
+		return name;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+        
+            public String getPassword() {
+        return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
+
+        public Feed getFeed() {
+            return feed;
+        }
+
+        public void setFeed(Feed feed) {
+            this.feed = feed;
+        }
+
 	public String getEmail() {
 		return email;
 	}
@@ -61,7 +66,7 @@ public class User implements Serializable {
 		this.dob = dob;
 	}
 	
-	public ArrayList<User> getFriends() {
+	public List<User> getFriends() {
 		return friends;
 	}
 	
@@ -70,7 +75,7 @@ public class User implements Serializable {
 		this.friendRequests.remove(newFriend);
 	}
 	
-	public ArrayList<User> getFriendRequests(){
+	public List<User> getFriendRequests(){
 		return friendRequests;
 	}
 	

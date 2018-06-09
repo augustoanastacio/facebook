@@ -1,7 +1,7 @@
-Barra de pesquisa global///////////
+﻿Barra de pesquisa global///////////
 
-Login
-criação de usuario
+//Login
+//criação de usuario
   nome
   email
   senha
@@ -22,7 +22,7 @@ perfil dosoto:
   botao criar post no mural dosoto
   mural docara
 
-alteração de senha:
+//alteração de senha:
   senha antiga
   senha nova
   senha nova confirmar

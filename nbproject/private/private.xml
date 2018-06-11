@@ -3,7 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/augus/Documents/GitHub/facebook/src/view/TelaDeLogin.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/model/Answer.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/control/SocialNetwork.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/model/Post.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/model/Comment.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/model/User.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/model/DataModel.java</file>
+            <file>file:/home/italo/work/projeto/facebook/src/view/TelaDeLogin.java</file>
         </group>
     </open-files>
 </project-private>

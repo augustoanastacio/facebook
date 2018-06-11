@@ -5,7 +5,7 @@
  */
 package view;
 
-import control.SocialNetwork;
+import model.SocialNetwork;
 
 /**
  *

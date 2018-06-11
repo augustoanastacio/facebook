@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 import model.User;
 
-import view.TelaDeLogin;
+import view.Login;
 
 public class SocialNetwork implements Serializable {
     private List<User> users;
@@ -17,9 +17,9 @@ public class SocialNetwork implements Serializable {
         this.users = new ArrayList();
     }
     
-    public void login(String name, String password, List<User> users) {
+    public void login(String name, String password) {
         for(int i = 0; i < users.size(); i++) {
-           if (users.get(i).getName().equals(name) && users.get(i).getPassword().equals(password)){
+           if (this.users.get(i).getName().equals(name) && this.users.get(i).getPassword().equals(password)){
                this.user = user;
            }
         }

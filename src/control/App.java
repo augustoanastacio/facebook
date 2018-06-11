@@ -6,13 +6,36 @@
 package control;
 
 import model.SocialNetwork;
+import view.Login;
+import view.NewUser;
+import view.ChangePassword;
+
 
 /**
  *
  * @author italo
  */
+
 public class App {
+    public static SocialNetwork network;
+    public static Login loginView;
+    public static NewUser newUserView;
+    public static ChangePassword changePasswordView;
+    
     public static void main(String[] args) {
-        SocialNetwork network = new SocialNetwork();
+        network = new SocialNetwork();
+        loginView = new Login();
+        loginView.setVisible(true);
+               
+    }
+    
+    public static void showNewUserView(){
+        newUserView = new NewUser();
+        newUserView.setVisible(true);
+    }
+    
+    public static void showChangePasswordView(){
+        changePasswordView = new ChangePassword();
+        changePasswordView.setVisible(true);
     }
 }

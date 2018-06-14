@@ -5,7 +5,9 @@
  */
 package control;
 
+import java.io.Serializable;
 import model.SocialNetwork;
+import model.User;
 import view.Login;
 import view.NewUser;
 import view.ChangePassword;
@@ -15,8 +17,7 @@ import view.ChangePassword;
  *
  * @author italo
  */
-
-public class App {
+public class App implements Serializable{
     public static SocialNetwork network;
     public static Login loginView;
     public static NewUser newUserView;
@@ -37,5 +38,9 @@ public class App {
     public static void showChangePasswordView(){
         changePasswordView = new ChangePassword();
         changePasswordView.setVisible(true);
+    }
+    
+    public static void showProfileView(User user){
+        ;
     }
 }

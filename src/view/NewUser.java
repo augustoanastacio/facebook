@@ -5,6 +5,12 @@
  */
 package view;
 
+import control.App;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author augus
@@ -46,6 +52,11 @@ public class NewUser extends javax.swing.JFrame {
         jLabel3.setText("Senha:");
 
         botaoCadastro.setText("Cadastrar");
+        botaoCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoCadastroActionPerformed(evt);
+            }
+        });
 
         campoData.setText("dd/mm/aaa");
         campoData.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +123,22 @@ public class NewUser extends javax.swing.JFrame {
     private void campoDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataActionPerformed
 
     }//GEN-LAST:event_campoDataActionPerformed
+
+    private void botaoCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastroActionPerformed
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date dob = new Date();
+        String username = campoNome.getText();
+        String email = campoLogin.getText();
+        String password = campoSenha.getText();
+        try {
+        dob = df.parse(campoData.getText());
+        } catch(ParseException e) {
+            System.out.println("Deu ruim");
+        }
+        
+
+        App.network.createUser(username, password, password, email, dob);
+    }//GEN-LAST:event_botaoCadastroActionPerformed
 
     /**
      * @param args the command line arguments

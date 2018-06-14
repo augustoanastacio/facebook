@@ -9,6 +9,8 @@ public class User implements Serializable {
 	private String name;
 	private String email;
         private String password;
+        private Photo profilePicture;
+        private List<Photo> pictures;
 	private Date dob;
 	private Feed feed;
 	private List<User> friends;
@@ -41,6 +43,24 @@ public class User implements Serializable {
         public void setPassword(String password) {
             this.password = password;
         }
+
+        public Photo getProfilePicture() {
+            return profilePicture;
+        }
+
+        public void setProfilePicture(Photo profilePicture) {
+            this.profilePicture = profilePicture;
+        }
+
+        public List<Photo> getPictures() {
+            return pictures;
+        }
+
+        public void setPictures(List<Photo> pictures) {
+            this.pictures = pictures;
+        }
+
+        
 
         public Feed getFeed() {
             return feed;

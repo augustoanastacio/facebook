@@ -2,12 +2,9 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import model.User;
 
-import view.Login;
 
 public class SocialNetwork implements Serializable {
     private List<User> users;

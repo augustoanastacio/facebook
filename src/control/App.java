@@ -11,6 +11,7 @@ import model.User;
 import view.Login;
 import view.NewUser;
 import view.ChangePassword;
+import view.ForgotenPassword;
 
 
 /**
@@ -22,6 +23,7 @@ public class App implements Serializable{
     public static Login loginView;
     public static NewUser newUserView;
     public static ChangePassword changePasswordView;
+    public static ForgotenPassword forgotenPassword;
     
     public static void main(String[] args) {
         network = new SocialNetwork();
@@ -39,6 +41,11 @@ public class App implements Serializable{
         changePasswordView = new ChangePassword();
         changePasswordView.setVisible(true);
     }
+    public static void showForgotenPasswordView(){
+        forgotenPassword = new ForgotenPassword();
+        forgotenPassword.setVisible(true);
+    }
+    
     
     public static void showProfileView(User user){
         ;

@@ -35,9 +35,14 @@ public class Login extends javax.swing.JFrame {
         campoSenha = new javax.swing.JPasswordField();
         botaoEntrar = new javax.swing.JButton();
         botaoNovoUser = new javax.swing.JButton();
-        botaoEsqueSenha = new javax.swing.JButton();
+        forgPassButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login");
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
         jLabel1.setText("Login:");
 
@@ -63,7 +68,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        botaoEsqueSenha.setText("esqueci minha senha");
+        forgPassButton.setText("esqueci minha senha");
+        forgPassButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                forgPassButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,7 +83,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(botaoEsqueSenha)
+                        .addComponent(forgPassButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoNovoUser))
                     .addComponent(jLabel2)
@@ -101,12 +111,13 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(botaoEntrar))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botaoEsqueSenha)
+                    .addComponent(forgPassButton)
                     .addComponent(botaoNovoUser))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void campoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoLoginActionPerformed
@@ -122,6 +133,10 @@ public class Login extends javax.swing.JFrame {
         App.network.login(campoLogin.getText(), campoSenha.getName());
         
     }//GEN-LAST:event_botaoEntrarActionPerformed
+
+    private void forgPassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgPassButtonActionPerformed
+        App.showForgotenPasswordView();
+    }//GEN-LAST:event_forgPassButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,10 +176,10 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoEntrar;
-    private javax.swing.JButton botaoEsqueSenha;
     private javax.swing.JButton botaoNovoUser;
     private javax.swing.JTextField campoLogin;
     private javax.swing.JPasswordField campoSenha;
+    private javax.swing.JButton forgPassButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

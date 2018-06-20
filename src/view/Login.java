@@ -131,7 +131,8 @@ public class Login extends javax.swing.JFrame {
 
     private void botaoEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoEntrarActionPerformed
         App.network.login(campoLogin.getText(), campoSenha.getName());
-        
+        App.showProfileView();
+        this.dispose();
     }//GEN-LAST:event_botaoEntrarActionPerformed
 
     private void forgPassButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgPassButtonActionPerformed
@@ -149,7 +150,7 @@ public class Login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

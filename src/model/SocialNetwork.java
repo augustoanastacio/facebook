@@ -7,8 +7,8 @@ import java.util.List;
 
 
 public class SocialNetwork implements Serializable {
-    private List<User> users;
-    private User user;
+    public List<User> users;
+    public User user;
     
     public SocialNetwork() {
         this.users = new ArrayList();
@@ -17,7 +17,7 @@ public class SocialNetwork implements Serializable {
     public void login(String name, String password) {
         for(int i = 0; i < users.size(); i++) {
            if (this.users.get(i).getName().equals(name) && this.users.get(i).getPassword().equals(password)){
-               this.user = user;
+               this.user = users.get(i);
            }
         }
     }

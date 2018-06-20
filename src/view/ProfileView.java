@@ -5,6 +5,8 @@
  */
 package view;
 
+import control.App;
+
 /**
  *
  * @author augus
@@ -40,6 +42,7 @@ public class ProfileView extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Home");
 
         jLabel1.setText("Foto do perfil");
 
@@ -136,6 +139,7 @@ public class ProfileView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -149,7 +153,7 @@ public class ProfileView extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -171,6 +175,8 @@ public class ProfileView extends javax.swing.JFrame {
                 new ProfileView().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

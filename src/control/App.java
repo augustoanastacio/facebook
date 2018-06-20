@@ -12,6 +12,7 @@ import view.Login;
 import view.NewUser;
 import view.ChangePassword;
 import view.ForgotenPassword;
+import view.ProfileView;
 
 
 /**
@@ -24,12 +25,15 @@ public class App implements Serializable{
     public static NewUser newUserView;
     public static ChangePassword changePasswordView;
     public static ForgotenPassword forgotenPassword;
+    public static ProfileView profile;
     
     public static void main(String[] args) {
-        network = new SocialNetwork();
+        network = new SocialNetwork();       
+        showLoginView();
+    }
+    public static void showLoginView(){
         loginView = new Login();
         loginView.setVisible(true);
-               
     }
     
     public static void showNewUserView(){
@@ -46,8 +50,9 @@ public class App implements Serializable{
         forgotenPassword.setVisible(true);
     }
     
-    
-    public static void showProfileView(User user){
-        ;
+    public static void showProfileView(){
+        profile = new ProfileView();
+        profile.setVisible(true);
+        
     }
 }

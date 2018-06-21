@@ -14,19 +14,26 @@ public class SocialNetwork implements Serializable {
         this.users = new ArrayList();
     }
     
-    public void login(String name, String password) {
-        for(int i = 0; i < users.size(); i++) {
-           if (this.users.get(i).getName().equals(name) && this.users.get(i).getPassword().equals(password)){
-               this.user = users.get(i);
+    public boolean login(String email, String password) {
+        System.out.println(email);
+        System.out.println(password);
+        for(User user: users) {
+           if (user.getEmail().equals(email) && user.getPassword().equals(password)){
+               this.user = user;
+               return true;
            }
         }
+        return false;
     }
     
     public void createUser(String name, String email, String password, 
                               String confirmPassword, Date dob){
         User newUser = new User(name, password, email, dob);
-        users.add(newUser);
+        this.users.add(newUser);
         
+        for(User member: users){
+            System.out.println(member.getName());
+        }
     }
         
 }

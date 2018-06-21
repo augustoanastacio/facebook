@@ -156,7 +156,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_forgPassButtonActionPerformed
 
     private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
-        if(App.network.login(campoLogin.getText(), campoSenha.getName())){
+        if(App.network.login(campoLogin.getText(), new String(campoSenha.getPassword()))){
             App.showProfileView();
             this.dispose();
         } else {

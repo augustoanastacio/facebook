@@ -6,8 +6,6 @@
 package view;
 
 import control.App;
-import model.Post;
-
 /**
  *
  * @author augus

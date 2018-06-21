@@ -52,6 +52,12 @@ public class NewUser extends javax.swing.JFrame {
 
         jLabel3.setText("Senha:");
 
+        campoSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoSenhaActionPerformed(evt);
+            }
+        });
+
         botaoCadastro.setText("Cadastrar");
         botaoCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,6 +152,23 @@ public class NewUser extends javax.swing.JFrame {
     private void campoDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDataActionPerformed
+
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        Date dob = new Date();
+        String username = campoNome.getText();
+        String email = campoLogin.getText();
+        String password = new String(campoSenha.getPassword());
+        try {
+        dob = df.parse(campoData.getText());
+        } catch(ParseException e) {
+            System.out.println("Deu ruim");
+        }
+        
+
+        App.network.createUser(username, email, password, password, dob);
+        this.dispose();
+    }//GEN-LAST:event_campoSenhaActionPerformed
 
     /**
      * @param args the command line arguments

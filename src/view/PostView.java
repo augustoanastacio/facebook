@@ -9,13 +9,20 @@ package view;
  *
  * @author italo
  */
-public class Post extends javax.swing.JPanel {
+public class PostView extends javax.swing.JPanel {
 
     /**
      * Creates new form Post
+     * @param author
+     * @param text
+     * @param date
      */
-    public Post() {
+    public PostView(String author, String text, String date) {
         initComponents();
+        
+        this.author.setText(author);
+        this.postText.setText(text);
+        
     }
 
     /**
@@ -27,12 +34,12 @@ public class Post extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        author = new javax.swing.JLabel();
+        postText = new javax.swing.JLabel();
 
-        jLabel1.setText("Nome do usuário");
+        author.setText("Nome do usuário");
 
-        jLabel2.setText("Texto da postagem");
+        postText.setText("Texto da postagem");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -41,9 +48,9 @@ public class Post extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(postText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(author)
                         .addGap(0, 250, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -51,16 +58,16 @@ public class Post extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(author)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(postText, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel author;
+    private javax.swing.JLabel postText;
     // End of variables declaration//GEN-END:variables
 }

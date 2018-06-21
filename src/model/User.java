@@ -12,7 +12,7 @@ public class User implements Serializable {
         private Photo profilePicture;
         private List<Photo> pictures;
 	private Date dob;
-	private Feed feed;
+        private List<Post> feed;
 	private List<User> friends;
 	private List<User> friendRequests;	
 	
@@ -22,7 +22,7 @@ public class User implements Serializable {
                 this.password = password;
 		this.dob = dob;
 		
-		this.feed = new Feed();
+		this.feed = new ArrayList();
 		this.friends = new ArrayList();
 		this.friendRequests = new ArrayList();
 	}
@@ -60,14 +60,12 @@ public class User implements Serializable {
             this.pictures = pictures;
         }
 
-        
-
-        public Feed getFeed() {
+        public List getFeed() {
             return feed;
         }
 
-        public void setFeed(Feed feed) {
-            this.feed = feed;
+        public void addPost(Post post) {
+            this.feed.add(post);
         }
 
 	public String getEmail() {

@@ -35,5 +35,14 @@ public class SocialNetwork implements Serializable {
             System.out.println(member.getName());
         }
     }
-        
+    
+    public boolean changePassword(String email, String password, String confirmPassword) {
+        for(User user: users) {
+           if (user.getEmail().equals(email)){
+               user.setPassword(password);
+               return true;
+           }
+        }
+        return false;
+    }  
 }

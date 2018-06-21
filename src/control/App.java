@@ -71,6 +71,5 @@ public class App implements Serializable{
     public static void showProfileView(){
         profile = new ProfileView();
         profile.setVisible(true);
-        
     }
 }
